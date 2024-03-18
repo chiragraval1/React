@@ -2,7 +2,7 @@ import React from 'react'
 
 function Experience() {
   return (
-    <div>
+    <div className='d-flex'>
             <div>
                 <p>Where</p>
                 <input placeholder='Search destination'></input>

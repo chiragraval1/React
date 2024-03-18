@@ -7,13 +7,13 @@ function Header() {
 
   return (
     <div className='header'>
-      <h2 className='title'>Booking.com</h2>
+      <h3 className='title'>Booking.com</h3>
       <div className='right'>
         <span>INR</span>
-        <span>Flag</span>
+        <span><img src='https://t-cf.bstatic.com/design-assets/assets/v3.109.0/images-flags/In@3x.png'></img></span>
         <span>List Your Property</span>
-        <Button variant='success'>Register</Button>
-        <Button variant='success'>Sign In</Button>
+        <Button variant='light text-primary'>Register</Button>
+        <Button variant='light text-primary'>Sign In</Button>
       </div>
     </div>
   )

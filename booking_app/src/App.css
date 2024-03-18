@@ -11,17 +11,24 @@
   background: #003b95;
 
 }
-hr{
+
+hr {
   color: #fff;
-  height: 20px;
+  height: 1px;
 }
 
 .header {
   background: #003b95;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   color: #fff;
+  padding: 20px 100px;
+}
+
+.header h3 {
+  font-weight: bold;
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
 .right {
@@ -30,12 +37,65 @@ hr{
   align-items: center;
 }
 
+.right span {
+  padding-right: 10px;
+}
+
+.right span img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+
 .right span,
 Button {
   margin-right: 5px;
 
 }
 
+.poster {
+  display: flex;
+  justify-content: left;
+  padding: 20px 100px;
+}
+
+.navi Button {
+  margin-right: 10px;
+}
+
+.empty {
+  height: 120px;
+}
+
+.poster1 {
+  padding: 20px 100px;
+}
+
+.poster1 h1 {
+  color: #fff;
+  text-align: left;
+  font-size: 45px;
+}
+
+.poster1 p {
+  text-align: left;
+  color: #fff;
+  font-size: 26px;
+}
+
+.user{
+  background: #ffb700;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.user input{
+  width: 30%;
+  border-radius: 5px;
+  border: #fff;
+  padding: 10px 5px;
+}
 /* .title{
   color: #fff;
 
