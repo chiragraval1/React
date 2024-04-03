@@ -1,28 +1,40 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-function Addemp() {
-
-    
+function Editemp() {
+      
     const [name, setname]= useState()
     const [surname, setsurname]= useState()
     const [email, setemail]= useState()
     const navigate = useNavigate()
+    const {editID} = useParams()
 
+    
     const  handalesubmit = (e)=>{
         e.preventDefault();
         const data = {name,surname,email};
-        fetch("http://localhost:8000/employees",
-        {   method:"POST",
+        fetch(`http://localhost:8000/employees/${editID}`,
+        {   method:"PUT",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(data)
         })
         .then((res)=>{
+            // return res.json()
+            if(res){
             alert("Employee added...")
             navigate("/")
+            }
+        })
+        .then((data)=>{
+            console.log(data)
+            setname(data.name)
+            setemail(data.email)
+            setsurname(data.surname)
         })
     }
-    return (
+  return (
+    <div>
+        <h2>Edit Employe</h2>
         <div className='container w-50'>
              <div>
                 <h2 className='bg-primary text-light'>Add Employee</h2>
@@ -54,7 +66,8 @@ function Addemp() {
             </form>
 
         </div>
-    )
+    </div>
+  )
 }
 
-export default Addemp
+export default Editemp

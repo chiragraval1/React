@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Empdata() {
 
@@ -13,6 +13,18 @@ function Empdata() {
       }
       )
   }, [])
+
+    const deleteid =(id)=>{
+      fetch("http://localhost:8000/employees/"+id,
+      {   method:"DELETE",
+          headers:{"content-type":"application/json"},
+      
+      })
+      .then((res)=>{
+          alert("Employee Removed Succefully...")
+          window.location.reload()
+      })
+    }
 
   return (
     <div className='container w-75'>
@@ -42,9 +54,9 @@ function Empdata() {
                 <td>{employees.surname}</td>
                 <td>{employees.email}</td>
                 <td>
-                  <button className='btn btn-primary m-2'>View</button>
-                  <button className='btn btn-success m-2'>Edit</button>
-                  <button className='btn btn-danger m-2'>Delete</button>
+                  <Link to={`/viewemp/${employees.id}`} className='btn btn-primary m-2'>View</Link>
+                  <Link to={`/editemp/${employees.id}`} className='btn btn-success m-2'>Edit</Link>
+                  <button onClick={()=>{deleteid(employees.id)}} className='btn btn-danger m-2'>Delete</button>
                 </td>
               </tr>
             ))}
